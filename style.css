@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+  margin: 200px auto;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#blob {
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 150px;
+  text-align: center;
+  text-transform: uppercase;
+}
