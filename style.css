@@ -1,28 +1,29 @@
 body {
   background-color: black;
-  margin: 200px auto;
-  width: 800px
 }
 
-h1 {
-  display: block;
-  font-size: 2em;
-  font-weight: bold;
-}
-
-#blob {
+#box {
   color: #fff;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 150px;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 100px;
   text-align: center;
   text-transform: uppercase;
+  width: 800px;
 }
 
-#blob:hover {
+#box span {
+  display: inline-block;
+}
+
+#box span:hover {
   text-shadow: none;
   -webkit-transition: text-shadow 1s;
 }
 
+/* Dun dun dun.*/
 .fire {
   text-shadow: 0 0 20px #fefcc9,
                10px -10px 30px #feec85,
@@ -38,29 +39,44 @@ h1 {
   -webkit-transform: rotate(-180deg);
 }
 
-.marquee {
-  -webkit-animation: marquee 15s linear infinite;
+/* The span needs to stretch so that it scrolls the entire box.
+   This is really gross and probably incorrect, but yomo
+   (you only marquee once). */
+.marquee span {
+  width: 100%;
+  text-align: right;
+  -webkit-animation: marquee 3s linear infinite;
 }
 
-.marquee.upside-down {
-  -webkit-animation: marquee-flip 15s linear infinite;
+/* All the translates need to go together. */
+.marquee span.upside-down {
+  width: 100%;
+  text-align: left;
+  -webkit-animation: marquee-upside-down 3s linear infinite;
 }
 
-.marquee.lulz {
-  -webkit-animation: marquee-lulz 15s linear infinite;
+/* This rotates! */
+.marquee span.lulz {
+  width: 100%;
+  text-align: right;
+  -webkit-transform-origin: center right;
+  -webkit-animation: marquee-lulz 3s linear infinite;
 }
 
 @-webkit-keyframes marquee {
-    0%   { -webkit-transform: translate(0, 0); }
-    100% { -webkit-transform: translate(-300%, 0); }
+  0%   { -webkit-transform: translate(0, 0); }
+  100% { -webkit-transform: translate(-100%, 0); }
 }
 
-@-webkit-keyframes marquee-flip {
-    0%   { -webkit-transform: translate(0, 0) rotate(-180deg); }
-    100% { -webkit-transform: translate(-300%, 0) rotate(-180deg); }
+@-webkit-keyframes marquee-upside-down {
+  0%   { -webkit-transform: translate(0, 0) rotate(-180deg); }
+  100% { -webkit-transform: translate(-100%, 0) rotate(-180deg); }
 }
 
 @-webkit-keyframes marquee-lulz {
-    0%   { -webkit-transform: translate(0, 0) rotate(-180deg); }
-    100% { -webkit-transform: translate(-100%, 0) rotate(-720deg); }
+  0%   { -webkit-transform: translateX(0) rotate(0); }
+  25%  { -webkit-transform: translateX(-25%) rotate(90deg); }
+  50%  { -webkit-transform: translateX(-50%) rotate(180deg); }
+  75%  { -webkit-transform: translateX(-75%) rotate(270deg); }
+  100% { -webkit-transform: translateX(-100%) rotate(360deg); }
 }
