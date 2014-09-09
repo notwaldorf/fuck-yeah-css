@@ -1,8 +1,12 @@
 body {
   background-color: white;
-  color: white;
+  color: black;
   font-family: Helvetica, Arial, sans-serif;
   margin-top: 100px;
+}
+
+p {
+  text-align: center;
 }
 
 img {
@@ -14,7 +18,8 @@ img {
 .yuuup {
   -webkit-filter: blur(6px) saturate(3) invert(1) hue-rotate(90deg);
   -webkit-transition: 2s;
-
+  filter: blur(6px) saturate(3) invert(1) hue-rotate(90deg);
+  -moz-transition: 2s;
   /*-webkit-filter: blur(6px);
   -webkit-filter: grayscale(0.8);
   -webkit-filter: hue-rotate(90deg);
