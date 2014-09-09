@@ -12,7 +12,7 @@ img {
 }
 
 .yuuup {
-  -webkit-filter: blur(6px) saturate(6.3) invert(1) hue-rotate(90deg);
+  -webkit-filter: blur(6px) saturate(3) invert(1) hue-rotate(90deg);
   -webkit-transition: 5s;
 
   /*-webkit-filter: blur(6px);
