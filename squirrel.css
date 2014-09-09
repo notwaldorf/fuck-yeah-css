@@ -1,0 +1,24 @@
+body {
+  background-color: white;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 100px;
+}
+
+img {
+  display: block;
+  margin: 100px auto 0 auto;
+  width: 600px;
+}
+
+.yuuup {
+  -webkit-filter: blur(6px) saturate(6.3) invert(1) hue-rotate(90deg);
+  -webkit-transition: 5s;
+
+  /*-webkit-filter: blur(6px);
+  -webkit-filter: grayscale(0.8);
+  -webkit-filter: hue-rotate(90deg);
+  -webkit-filter: invert(1);
+  -webkit-filter: saturate(6.3);*/
+
+}
